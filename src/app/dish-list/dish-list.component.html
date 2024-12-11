@@ -1,0 +1,37 @@
+<body class="container">    
+    <h2>Dishes List</h2> 
+    <table mat-table  class="mat-elevation-z8" [dataSource]="dishes" matSort>
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let dish"> {{ dish.name }} </td>
+        </ng-container>
+    
+        <!-- Price Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <td mat-cell *matCellDef="let dish"> {{ dish.price | currency }} </td>
+        </ng-container>
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions" >            
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let dish">
+                <button (click)="addToCart(dish)">Add to Cart</button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="['name', 'price','actions']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['name', 'price','actions']"></tr>
+      </table>
+      <div class="cart-info"> 
+        <p>Dishes in cart: {{ addedDishesCount }}</p> 
+      </div>
+      <button class="center-button" routerLink="/cart">Proceed to Checkout</button>
+</body>
+
+
+<!-- <div *ngFor="let dish of dishes">
+    <h3>{{ dish.name }}</h3>
+    <p>{{ dish.price | currency }}</p>
+    <button (click)="addToCart(dish)">Add to Cart</button>
+  </div> -->
+  

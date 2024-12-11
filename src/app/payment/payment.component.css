@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+  }
+
+  .payment-form {
+    max-width: 800px;
+    margin: auto;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+  }
+
+  .form-section {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .form-section h2 {
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group input[type="password"] {
+    width: 90%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .flex-container {
+    display: flex;
+    gap: 10px;
+    max-width: 350px;
+  }
+
+  .flex-container .form-group {
+    flex: 1;
+  }
+
+  .form-group button {
+    width: fit-content;
+    margin: 20px auto 0;
+    display: block;
+    padding: 6px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .form-group button:hover {
+    background-color: #45a049;
+  }
+  .success-message { 
+    color: green; 
+    font-weight: bold; 
+    margin-top: 20px; 
+    text-align: center; 
+ }
+ .error-message{
+    color: red; 
+    font-weight: bold; 
+    margin-top: 5px; 
+    text-align: center;
+ }

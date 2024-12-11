@@ -1,0 +1,39 @@
+<body class="container"> 
+    <h2>Restaurants List</h2>   
+    <table mat-table  class="mat-elevation-z8" [dataSource]="restaurants" matSort>
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let restaurant"> {{ restaurant.name }} </td>
+        </ng-container>
+    
+        <!-- Location Column -->
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef> Address </th>
+          <td mat-cell *matCellDef="let restaurant"> {{ restaurant.address }} </td>
+        </ng-container>
+    
+        <!-- Cuisine Column -->
+        <ng-container matColumnDef="cuisine">
+          <th mat-header-cell *matHeaderCellDef> Cuisine </th>
+          <td mat-cell *matCellDef="let restaurant"> {{ restaurant.cuisine }} </td>
+        </ng-container>
+    
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions" >
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let restaurant">
+            <button (click)="viewDishes(restaurant.id)">View Dishes</button>
+          </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="['name', 'address', 'cuisine', 'actions']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['name', 'address', 'cuisine', 'actions'];"></tr>
+      </table>
+    <!-- <div *ngFor="let restaurant of restaurants">
+    <h2>{{ restaurant.name }}</h2>
+    <p>{{ restaurant.address }}</p>
+    <button (click)="viewDishes(restaurant.id)">View Dishes</button>
+  </div> -->
+</body>
+  
